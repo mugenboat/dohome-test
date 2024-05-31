@@ -5,14 +5,15 @@ import Card from "../components/Card";
 import ProductCard from "../components/ProductCard";
 
 interface Product {
-  id: number;
+  id: string;
   text: string;
   completed: boolean;
   thumbnail: string;
-  id: number;
   key: number;
   description: string;
   discountPercentage: number;
+  price: number;
+  unit: string;
 }
 
 interface Promotion {
@@ -22,7 +23,8 @@ interface Promotion {
   header: string;
   content: string;
   list: string[];
-  style: any;
+  textStyle: string;
+  buttonStyle: string;
 }
 
 export default function Home() {
@@ -57,6 +59,7 @@ export default function Home() {
         "Up to 1500 customer profiles",
         "Viwe demographicinsights",
       ],
+      textStyle: "basic-card",
       buttonStyle: "promotion-button social-button-color",
     },
     {
@@ -72,6 +75,7 @@ export default function Home() {
         "Email campaigns & interactions",
         "View your customers profiles",
       ],
+      textStyle: "basic-card",
       buttonStyle: "promotion-button marketing-button-color",
     },
   ]);
@@ -96,6 +100,7 @@ export default function Home() {
       <div className="flex justify-center self-auto mt-10">
         {promotions.map(promotion => (
           <Card
+            id={promotion.id}
             key={promotion.id}
             price={promotion.price}
             header={promotion.header}
@@ -108,7 +113,7 @@ export default function Home() {
         ))}
       </div>
       <div className="flex justify-center self-auto mt-10">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
           {products.map(product => (
             <ProductCard
               thumbnail={product.thumbnail}

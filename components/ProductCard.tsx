@@ -1,9 +1,8 @@
 interface CardItem {
-  id: number;
+  id: string;
   thumbnail: string;
   description: string;
   price: number;
-  unit: string;
   discountPercentage: number;
 }
 
@@ -20,7 +19,6 @@ export default function CardItem(props: CardItem) {
             height="0"
             sizes="100vw"
             style={{ width: "100%", height: "100px" }}
-            fetchpriority="high"
             className="mt-4object-cover"
           />
           <div className="font-bold text-[10px]">
@@ -54,7 +52,6 @@ export default function CardItem(props: CardItem) {
             height={10}
             loading="lazy"
             className="inline"
-            fetchpriority="high"
           />
         </div>
       </div>

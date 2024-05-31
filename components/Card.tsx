@@ -2,10 +2,11 @@ interface CardItem {
   price: number;
   header: string;
   content: string;
-  list: string;
+  list: string[];
   id: number;
   textStyle: any;
   buttonStyle: any;
+  button: string;
 }
 
 export default function Card(props: CardItem) {
@@ -27,7 +28,6 @@ export default function Card(props: CardItem) {
             height={10}
             loading="lazy"
             className="inline"
-            fetchpriority="high"
           />
           {item}
         </div>
@@ -36,9 +36,6 @@ export default function Card(props: CardItem) {
         <button type="button" className={props.buttonStyle}>
           {props.button}
         </button>
-        {/* row-end text-[8px] flex items-center text-white uppercase text-[10px]
-        rounded-lg px-5 py-2.5 me-2 mb-2 */}
-        {/* <button className={button}>asdksjkd</button> */}
       </div>
     </div>
   );
