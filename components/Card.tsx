@@ -1,4 +1,4 @@
-type CardItem = {
+interface CardItem {
   price: number;
   header: string;
   content: string;
@@ -7,7 +7,7 @@ type CardItem = {
   textStyle: any;
   buttonStyle: any;
   button: string;
-};
+}
 
 export default function Card(props: CardItem) {
   return (

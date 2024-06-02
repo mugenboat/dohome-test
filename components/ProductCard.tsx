@@ -1,10 +1,10 @@
-type CardItem = {
+interface CardItem {
   id: string;
   thumbnail: string;
   description: string;
   price: number;
   discountPercentage: number;
-};
+}
 
 export default function CardItem(props: CardItem) {
   return (
